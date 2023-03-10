@@ -1,0 +1,86 @@
+PS C:\Users\priyes1x> $PSVersionTable
+
+Name                           Value
+----                           -----
+PSVersion                      5.1.22000.1335
+PSEdition                      Desktop
+PSCompatibleVersions           {1.0, 2.0, 3.0, 4.0...}
+BuildVersion                   10.0.22000.1335
+CLRVersion                     4.0.30319.42000
+WSManStackVersion              3.0
+PSRemotingProtocolVersion      2.3
+SerializationVersion           1.1.0.1
+
+
+PS C:\Users\priyes1x> Get-HotFix
+
+Source        Description      HotFixID      InstalledBy          InstalledOn
+------        -----------      --------      -----------          -----------
+PRIYES1X-M... Update           KB5022505     NT AUTHORITY\SYSTEM  2/27/2023 12:00:00 AM
+PRIYES1X-M... Update           KB5007575     NT AUTHORITY\SYSTEM  11/25/2022 12:00:00 AM
+PRIYES1X-M... Security Update  KB5012170     NT AUTHORITY\SYSTEM  11/26/2022 12:00:00 AM
+PRIYES1X-M... Security Update  KB5022836     NT AUTHORITY\SYSTEM  2/27/2023 12:00:00 AM
+PRIYES1X-M... Update           KB5022369     NT AUTHORITY\SYSTEM  2/24/2023 12:00:00 AM
+
+PS C:\Users\priyes1x> New-Item -Path 'C:\temp\Test Folder' -ItemType Directory
+
+
+    Directory: C:\temp
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         3/10/2023   3:46 PM                Test Folder
+
+
+PS C:\Users\priyes1x> New-Item -Path 'C:\temp\Test Folder\Test File.txt' -ItemType File
+
+
+    Directory: C:\temp\Test Folder
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         3/10/2023   4:07 PM              0 Test File.txt
+
+
+PS C:\Users\priyes1x> Copy-Item 'C:\temp\Test Folder' 'C:\temp\Test Folder1'
+PS C:\Users\priyes1x> Copy-Item 'C:\temp\Test Folder' -Destination 'C:\temp\Test Folder1'
+PS C:\Users\priyes1x> Copy-Item 'C:\temp\Test Folder\Test File.txt' 'C:\temp\Test Folder1\Test File1.txt'
+PS C:\Users\priyes1x> Copy-Item -Filter *.txt -Path 'C:\temp\Test Folder' -Recurse -Destination 'C:\temp\Test Folder1'
+Copy-Item : An item with the specified name C:\temp\Test Folder1\Test Folder already exists.
+PS C:\Users\priyes1x> Remove-Item 'C:\temp\Test Folder1'
+
+Confirm
+The item at C:\temp\Test Folder1 has children and the Recurse parameter was not specified. If you continue, all
+children will be removed with the item. Are you sure you want to continue?
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): Y
+PS C:\Users\priyes1x> Remove-Item 'D:\temp\Test Folder' -Recurse
+PS C:\Users\priyes1x> Remove-Item 'C:\temp\Test Folder' -Recurse
+PS C:\Users\priyes1x> Remove-Item 'C:\temp\Test Folder\test.txt'
+
+PS C:\Users\priyes1x> New-Item -Path 'C:\temp\Test Folder' -ItemType Directory
+
+
+    Directory: C:\temp
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         3/10/2023   4:33 PM                Test Folder
+
+
+PS C:\Users\priyes1x> New-Item -Path 'C:\temp\Test Folder\Test File.txt' -ItemType File
+
+
+    Directory: C:\temp\Test Folder
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         3/10/2023   4:36 PM              0 Test File.txt
+
+
+PS C:\Users\priyes1x> Copy-Item 'C:\temp\Test Folder' 'C:\temp\Test Folder1'
+PS C:\Users\priyes1x> Copy-Item 'C:\temp\Test Folder' -Destination 'C:\temp\Test Folder1'
+PS C:\Users\priyes1x> Copy-Item 'C:\temp\Test Folder\Test File.txt' 'C:\temp\Test Folder1\Test File1.txt'
